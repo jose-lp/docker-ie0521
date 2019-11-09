@@ -1,8 +1,9 @@
 # Imagen base ubuntu 18.04
 FROM ubuntu:18.04
 
-# Mantainer  jose-lp: joselp1695@gmail.com
-LABEL maintainer="jose-lp"
+# Mantainer
+LABEL maintainer="José López Picado"
+LABEL email="joselp1695@gmail.com"
 
 # Instalación de paquetes
 RUN apt update && apt install -y  --no-install-recommends  \
