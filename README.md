@@ -2,9 +2,14 @@
 Dockerfiles de las imágenes de testeo para el curso IE0521 de la UCR.
 
 # Tags
-
 - t3: ambiente de testeo para la tarea 3. 
 - t4: ambiente de testeo para la tarea 4.
 
+# Paquetes
+- build-essential
+- make
+- cmake
+- libgtest-dev
+
 # Autor
-[jose-lp](https://github.com/jose-lp)
+[jose-lp](https://github.com/jose-lp) email: joselp1695@gmail.com
