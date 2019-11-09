@@ -12,4 +12,8 @@ Dockerfiles de las imágenes de testeo para el curso IE0521 de la UCR.
 - libgtest-dev
 
 # Autor
-[jose-lp](https://github.com/jose-lp) email: joselp1695@gmail.com
+[jose-lp](https://github.com/jose-lp) 
+email: joselp1695@gmail.com
+
+# LICENSE
+[Licencia](https://github.com/jose-lp/docker-ie0521/blob/master/LICENSE)
