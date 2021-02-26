@@ -1,0 +1,17 @@
+--- Resulting report ---
+
+- Input files -
+Tracking file: /tmp/tracks.yaml
+GT file: /tmp/FilmPanoramic.yaml
+
+- Configuration parameters -
+Miss constant = 1
+False positive constant = 0.8
+Missmatch constant = 1
+Precision error = 0
+Mismatch error = 80
+Detection error = 250
+
+- Metrics values -
+       GTobj      SUTobj          FP          FN          TP          MS         MSM        Rcll        Prcn          F1        MOTA        MOTP
+       66476       74735      19.70%      17.49%      82.51%      71.40%      13.99%        0.83        0.79        0.81      -3.11%  1281.39 px

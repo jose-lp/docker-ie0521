@@ -1,0 +1,91 @@
+This is the README file for the multipartite graph tracker
+
+-==Install==-
+The dependencies to build this software are:
+-yaml-cpp-0.6.0
+-opencv-2.4.13.5
+-boost-1.67.0
+
+Use make to compile this software.
+
+-==Configuration parameters settings==-
+
+mode: Choose between pris segmentator or mog segmentator for blob extraction
+
+Segmentation parameters:
+hue_min, hue_max: hue color boundaries for green in HSV color space
+porcentaje_espurias: Percentage used to filter blob by size, taking into account the proportion of each blob with the biggest one
+area_max_threshold: Threshold to filter the biggest blob
+tamano_kernel: Kernel size for the variance filter
+umbral_hue: Hue threshold for the variance filter
+enable_morph_line_remover: Enable remove of lines using morphological transformations
+hmorph_axis: Proportion of the horizontal axis of the kernel size for morph line remover
+vmorph_axis: Proportion of the vertical axis of the kernel size for morph line remover
+enable_hough_line_remover: Enable remover of lines using Hough transformation 
+line_kernel: Kernel for the morphologic operation on lines
+minLineLength: The minimum number of points that can form a line
+maxLineGap: The maximum gap between two points to be considered in the same line.
+shape_contour_remover: Use a circularity criterion for the line remover
+enable_green_blob_remover: Removes those blobs which predominant color is green
+lower_boundary: Lower boundart defined as a percent of the height of the frame. Equal to the bottom of the video.
+upper_boundary: Upper boundary defined as a percent of the height of the frame. Equal to the top of the video.
+enable_boundary_blob_remover: Enable the remover of blobs outside the boundaries
+enable_morph_operations: Enable morph operations on the whole binary mask
+morph_erode_kernel: kernel size for the erode operation
+morph_dilate_kernel: kernel size for the dilate operation
+enable_manual_field_selection: Enable the selection of the field, use to filter blobs out of the area specified by corner points
+top_left_point_x: Top left x coordinate corner point for filtering
+top_left_point_y: Top left y coordinate corner point for filtering
+top_right_point_x: Top right x coordinate corner point for filtering
+top_right_point_y: Top left y coordinate corner point for filtering
+bottom_left_point_x: Bottom left x coordinate corner point for filtering
+bottom_left_point_y: Bottom left y coordinate corner point for filtering
+bottom_right_point_x: Bottom right x coordinate corner point for filtering
+bottom_right_point_y: Bottom right y coordinate corner point for filtering
+
+history: Length of the history for MOG
+varThreshold: Maximum allowed number of mixture components for MOG
+bShadowDetection: Enable/disable mog shadow detection for MOG
+learningRate: Learning rate for the MOG
+
+Multipartite graph tracker parameters:
+start_frame: Frame to start the segmentation and tracking
+stop_frame: Frame to stop the segmentation and tracking
+graph_window: Size of the window for the multipartite graph / number of graphs
+position_weight: Position weight for the characteristic relation between nodes
+histogram_weight: Color information weight for the characteristic relation between nodes
+contour_weight: Contour weight for the characteristic relation between nodes
+init_tkp_threshold: Number of pixels as error to consider for the initialization points to assign the labels for blobs
+area_weight: Area weight for the characteristic relation between nodes
+speed_weight: Speed weight for the characteristic relation between nodes
+direction_weight: Direction weight for the characteristic relation between nodes
+max_speed: Threshold value for the difference on distance between blobs to be considered as a relation
+max_merge_distance: used on old oclusion solver versions
+min_blob_area_threshold: Blobs below this percent of the average blob area within a MPG are not considered on the oclusion solver
+merged_blob_area_threshold: Blobs above this percent of the average blob area within a MPG are considered as merged blobs
+enable_oclusion_solver: Select and enable the oclusion solver for the mpgt
+enable_abduction_finder: Enable the abduction solver for the mpgt, if disable abductions are recovered using the incidence multiparite matrix
+blob_memoir_lenght: How many frames a blob should be remembered if is part of a merge event
+memoir_diff_threshold: Not used
+enable_clustering: Enable different clustering algorithms for blob classification
+hue_clustering_only: Use only hue channel for clusters, otherwise use hue and saturation
+how_many_colors: How many predominant colors are used as features for clustering
+area_as_cluster_feature: Use the normalized blob area as a clustering feature
+clustering_mode: Clustering algorithm. 1:k-means 2:k-means++ 3:AHC with single linkage 4: AHC with complete linkage 5: AHC with Ward
+n_clusters: Number of clusters
+match_method: Template match method used on the oclusion splitter, see opencv docs for values.
+match_threshold: Threshold value to considered as a good template match (depends on the match method)
+
+Drawing settings:
+enable_boundary_blob_remover: Dont draw blobs outside the lower and upper boundaries
+lower_boundary: Lower boundart defined as a percent of the height of the frame. Equal to the bottom of the video.
+upper_boundary: Upper boundary defined as a percent of the height of the frame. Equal to the top of the video.  
+draw_ids: Draw the players ids
+draw_contours: Draw the blob contours
+draw_bounding_box: Draw a bounding box for each contour
+draw_blob_ids_also: Draw the blob ids on each frame (mostly for debug)
+draw_trayectories: Draw the centroids history to generate the trayectories
+draw_scale: Font scale factor that is multiplied by the font-specific base size
+draw_cluster_ids_also: Draw the cluster assignments within the MPGT
+enable_color_balance: Enable a color balance on the output video.
+color_balance_percent: Color balance adjustment percent

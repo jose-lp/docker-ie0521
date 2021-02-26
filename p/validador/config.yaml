@@ -1,0 +1,19 @@
+--- # Configuration file
+
+#Validator
+validator:
+   report_level: 2
+   start_frame: 406
+   stop_frame: 2996
+
+#MOTA
+mota:
+   miss_constant: 1.0
+   false_positive_constant: 0.5
+   mismatches_constant: 1.0
+   mismatch_error: 80
+   detection_error: 250
+
+#MOTP
+motp:
+   precision_error: 0.0

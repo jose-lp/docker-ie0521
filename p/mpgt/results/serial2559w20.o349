@@ -1,0 +1,15 @@
+CPU03.tara
+Input video file is: /mnt/data/mvillaltaf/result.avi
+Configuration file set to: ./config20w2559.yaml
+Tracking file set to: ./tracks.yaml
+Loading video file ...
+Frame per seconds : 23.976
+Total frames in video : 2877
+Frame Size = 3642x494
+Starting segmentation and tracking...
+Segmentation mode: PRIS
+Elapsed time for MPGT segmentation and tracking = 2957 s
+Elapsed time for Segmentation = 2906 s
+Elapsed time for Tracking = 51 s
+FPS = 0.865404
+Writing results to yaml tracking file.

@@ -1,0 +1,96 @@
+-=Requirements=-
+
+
+-=General instructions=-
+This tool is mainly for videos from the 4K cameras. 
+OpenCV only supports the avi container for video output.
+
+
+-=Tipical use=-
+1. Get the timecodes from the *.mxf files (using the script timecode_generator.sh)
+and copy them to the configuration file. If timecode is not available or the cameras werent syncronized with the timecodes is
+better to choose the manual or graphic syncronization modes.
+
+2. Convert *.mxf files to *.mp4 using the mfx2mp4.sh script.
+
+3. Configure the joiner editing the configuration file options.
+
+4. First enable the point selection mode 1 to choose the corners and middle points of the field on each side, this is done just once.
+   Is also a good idea to use point selection mode 2 to select the cropping point to cut the output images and fit them on the video, this is done just once.
+
+5. Run
+
+-=Configuration file=-
+  keys: Key codes used by opencv to detect the keys
+
+  left_video_start_frame: In case of manual syncronization use this value as the left video starting frame.
+  right_video_start_frame: In case of manual syncronization use this value as the right video starting frame.
+  point_selection_mode: Enable the selection of the field corners on each video for geometric transformation
+  left_video_top_left_x: Set this value on single video point selection mode, see modes on Defs.h
+  left_video_top_right_x: Set this value on single video point selection mode, see modes on Defs.h
+  left_video_bottom_left_x: Set this value on single video point selection mode, see modes on Defs.h
+  left_video_bottom_right_x: Set this value on single video point selection mode, see modes on Defs.h
+  left_video_top_left_y: Set this value on single video point selection mode, see modes on Defs.h
+  left_video_top_right_y: Set this value on single video point selection mode, see modes on Defs.h
+  left_video_bottom_left_y: Set this value on single video point selection mode, see modes on Defs.h
+  left_video_bottom_right_y: Set this value on single video point selection mode, see modes on Defs.h
+  right_video_top_left_x: Set this value on single video point selection mode, see modes on Defs.h
+  right_video_top_right_x: Set this value on single video point selection mode, see modes on Defs.h
+  right_video_bottom_left_x: Set this value on single video point selection mode, see modes on Defs.h
+  right_video_bottom_right_x: Set this value on single video point selection mode, see modes on Defs.h
+  right_video_top_left_y: Set this value on single video point selection mode, see modes on Defs.h
+  right_video_top_right_y: Set this value on single video point selection mode, see modes on Defs.h
+  right_video_bottom_left_y: Set this value on single video point selection mode, see modes on Defs.h
+  right_video_bottom_right_y: Set this value on single video point selection mode, see modes on Defs.h
+  video_top_left_x: Set this value on full video point selection mode, see modes on Defs.h
+  video_top_right_x: Set this value on full video point selection mode, see modes on Defs.h
+  video_bottom_left_x: Set this value on full video point selection mode, see modes on Defs.h
+  video_bottom_right_x: Set this value on full video point selection mode, see modes on Defs.h
+  video_top_left_y: Set this value on full video point selection mode, see modes on Defs.h
+  video_top_right_y: Set this value on full video point selection mode, see modes on Defs.h
+  video_bottom_left_y: Set this value on full video point selection mode, see modes on Defs.h
+  video_bottom_right_y: Set this value on full video point selection mode, see modes on Defs.h
+  enable_output_video_crop: Use the full video points as cropping corners of the stitched video.
+  sync_mode: Sycronization mode, see modes on Defs.h
+  left_timecode: Timecode for the left video set as: 00:00:00.0
+  right_timecode: Timecode for the right video set as: 00:00:00.0
+  enable_drop_frame: Enable drop frame for floating fps values
+  frame_rate: Video frame rate
+  start_frame: Start frame for the joiner procedure
+  stop_frame: Stop frame for the joiner procedure
+  frame2skip: Number of frames to skip while in graphic sync mode. Up key for the left video and Down key for the right video.
+  enable_color_balance: Enable color balance
+  enable_s_color_correction: Enable saturation color correction on each videos.
+  enable_v_color_correction: Enable value color correction on each videos.
+  color_correction_video_reference: Use the left or right video as the reference for the color correction
+  enable_color_region_selection: 0
+  stitch_mode: Stitch mode, see modes on Defs.h
+  divide_images: 0
+  try_use_gpu: If a cuda gpu is detected use it for the transformations and color conversions.
+  enable_top_corners_correction: Correct the top corners x-axis, helps changing the perspective at the side of the video.
+  left_top_corner_correction: Amount of pixels to correct the top left corner of the left video.
+  right_top_corner_correction: Amount of pixels to correct the top right corner of the right video.
+
+-=Other notes=-
+Cropping the video is a good idea because of the max dimensions that the video codecs can handle.
+
+///Sync modes
+#define TIMECODE_MODE 1
+#define MANUAL_MODE 2
+#define GRAPHIC_MODE 3
+
+#define DEBUG_PANO false
+
+//Stitch modes
+#define STITCH_FULL 1
+#define STITCH_SURF1 2
+#define STITCH_SURF2 3
+#define STITCH_MJ 4
+#define STITCH_GEORS 5
+#define STITCH_GEO 6
+#define STITCH_GEOP 7
+
+//Point selection mode
+#define NO_VIDEO_PMODE 0
+#define SINGLE_VIDEO_PMODE 1
+#define FULL_VIDEO_PMODE 2

@@ -1,0 +1,61 @@
+# --- # Configuration file
+# no sirve porque no se ve linea media en un video
+keys:
+  esc_key: 1048603
+  quit_key: 113
+  safe_key: 115
+  next_key: 1048686
+  left_key: 1113937
+  right_key: 1113939
+  down_key: 1113940
+  up_key: 1113938
+  enter_key: 1048586
+
+joiner:
+  left_video_start_frame: 0
+  right_video_start_frame: 6
+  point_selection_mode: 2
+  left_video_top_left_x: 995
+  left_video_top_right_x: 1916
+  left_video_bottom_left_x: 4
+  left_video_bottom_right_x: 1859
+  left_video_top_left_y: 548
+  left_video_top_right_y: 589
+  left_video_bottom_left_y: 627
+  left_video_bottom_right_y: 827
+  right_video_top_left_x: 50
+  right_video_top_right_x: 954
+  right_video_bottom_left_x: -12
+  right_video_bottom_right_x: 1908
+  right_video_top_left_y: 633
+  right_video_top_right_y: 600
+  right_video_bottom_left_y: 880
+  right_video_bottom_right_y: 680
+  video_top_left_x: 7
+  video_top_right_x: 3655
+  video_bottom_left_x: 7
+  video_bottom_right_x: 3655
+  video_top_left_y: 317
+  video_top_right_y: 317
+  video_bottom_left_y: 880
+  video_bottom_right_y: 880
+  enable_output_video_crop: 1
+  sync_mode: 0
+  left_timecode: 01:24:07.0
+  right_timecode: 01:24:07.6
+  enable_drop_frame: 1
+  frame_rate: 29.97
+  start_frame: 576
+  stop_frame: 776
+  frame2skip: 20
+  enable_color_balance: 1
+  enable_s_color_correction: 0
+  enable_v_color_correction: 0
+  color_correction_video_reference: left
+  enable_color_region_selection: 0
+  stitch_mode: 7
+  divide_images: 0
+  try_use_gpu: 1
+  enable_top_corners_correction: 0
+  left_top_corner_correction: 0
+  right_top_corner_correction: 0

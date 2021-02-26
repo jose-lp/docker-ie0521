@@ -1,0 +1,27 @@
+#PBS -l nodes=1:ppn=32
+#PBS -l walltime=24:05:30
+#PBS -T flush_cache
+#PBS -N "UCRFemenino1_SegundoPartido-joiner"
+#PBS -o out.$PBS_JOBID.txt
+#PBS -e err.$PBS_JOBID.txt
+#PBS -q compute
+
+
+# modify this with the app name
+APP=
+
+# set up environment to import pre-compiled executables
+module add use.own boost/1.67.0 cuda/8.0.44 gcc/4.9.2 ffmpeg/4.1.3 yaml-cpp opencv/2.4.13.6.1
+
+# change into submission directory and run jobs
+cd ${PBS_O_WORKDIR}
+
+# view the stdout and sterr while running 
+exec 1>$PBS_JOBID.tmp.stdout
+exec 2>$PBS_JOBID.tmp.stderr
+
+# override the number of OMP threads per process
+#export OMP_NUM_THREADS=
+
+hostname
+./VideoJoiner -l /mnt/data/Videos/segundopartido/Clip32C1iz1Tiempo/izquierdo_segundopartido.mp4  -r /mnt/data/Videos/segundopartido/Clip32C2dr1Tiempo/derecho_segundopartido.mp4 -c /mnt/data/Videos/segundopartido/config-UCRFemenino1.yaml  -o /mnt/data/Videos/segundopartido/PrimerTiempo2.avi

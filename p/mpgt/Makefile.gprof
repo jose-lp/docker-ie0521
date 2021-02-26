@@ -1,0 +1,14 @@
+CC = g++
+CFLAGS = -pg -Wall -std=c++11 -O3 -DWITHGPERFTOOLS
+SRCS = MultipartiteGraphTracker.cpp PrisSerial.cpp VideoManager.cpp PlayerBlob.cpp Segmentator.cpp MultiPartiteGraph.cpp YamlParser.cpp TikzParser.cpp Timer.cpp
+PROG = MultipartiteGraphTracker
+
+OPENCV = `pkg-config opencv --cflags --libs`
+YAMLCPP = `pkg-config yaml-cpp --cflags --libs`
+LIBS = $(OPENCV) $(YAMLCPP) -fopenmp -lprofiler
+
+$(PROG):$(SRCS)
+	$(CC) $(CFLAGS) -o $(PROG) $(SRCS) $(LIBS)
+
+clean:
+	rm -rf $(PROG) *.o

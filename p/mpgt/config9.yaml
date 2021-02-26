@@ -1,0 +1,84 @@
+--- # Configuration file
+
+# Segmentation parameters
+segmentator:
+  mode: 1
+  pris:
+    hue_min: 60
+    hue_max: 180 
+    porcentaje_espurias: 8
+    area_max_threshold: 20000
+    tamano_kernel: 9
+    umbral_hue: 93
+    enable_morph_line_remover: 1
+    hmorph_axis: 30
+    vmorph_axis: 2
+    enable_hough_line_remover: 1
+    line_kernel: 10
+    minLineLength: 50
+    maxLineGap: 10
+    shape_contour_remover: 9    
+    lower_boundary: 10
+    upper_boundary: 95
+    enable_boundary_blob_remover: 0
+    enable_morph_operations: 1
+    morph_erode_kernel: 1
+    morph_dilate_kernel: 4
+    enable_manual_field_selection: 1
+    enable_white_remover: 1
+    top_left_point_x: 1022
+    top_left_point_y: 93
+    top_right_point_x: 2643
+    top_right_point_y: 108
+    bottom_left_point_x: 11
+    bottom_left_point_y: 534
+    bottom_right_point_x: 3632
+    bottom_right_point_y: 535   
+    
+  mog:
+    history: 100
+    varThreshold: 16
+    bShadowDetection: 0
+    learningRate: 13
+    porcentaje_espurias: 4
+    gaussian_kernel: 3
+    
+# Multipartite graph tracker parameters
+mpgt:
+  start_frame: 576
+  stop_frame: 676
+  graph_window: 10
+  position_weight: 0.08
+  histogram_weight: 4.0
+  contour_weight: 0.01
+  area_weight: 0.00025
+  speed_weight: 0.0
+  direction_weight: 2500.0
+  depth_weight: 0.08
+  max_speed: 600
+  max_merge_distance: 100
+  max_split_threshold: 100  
+  init_tkp_threshold: 25
+  enable_oclusion_solver: 2
+  enable_extended_finder: 0 
+  blob_memoir_lenght: 1800
+  memoir_diff_threshold: 999999
+  enable_clustering: 0
+  hue_clustering_only: 0
+  how_many_colors: 4
+  area_as_cluster_feature: 0
+  clustering_mode: 4
+  n_clusters: 6
+
+# Drawer settings
+drawer:
+  enable_boundary_blob_remover: 0
+  lower_boundary: 10
+  upper_boundary: 90
+  draw_ids: 1
+  draw_contours: 1
+  draw_bounding_box: 0
+  draw_blob_ids_also: 1
+  draw_cluster_ids_also: 0
+  draw_trayectories: 0
+  font_scale: 1

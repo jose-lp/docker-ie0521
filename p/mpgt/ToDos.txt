@@ -1,0 +1,22 @@
+
+Documentar metodos y clases
+
+
+Carpinteria:
+Anotacion manual
+Quitar algunos contornos o mejorar la segmentacion
+AVACET
+
+Incluir el kmeans para evitar asociaciones entre judarores de distintos equipos
+Utilizar el best buddies template matching para resolver oclusiones tambien
+
+Utilizar otros algoritmos de clustering, revisar:
+http://bonsai.hgc.jp/~mdehoon/software/cluster/
+http://dlib.net/ml.html
+http://mlpack.org/doc/stable/cli_documentation.html#dbscan
+
+Probar los diferentes clusterings y depurar la clasificacion de blobs
+Expresar el grafo multipartito en el formato de BGL para utilizar sus algoritmos
+Migrar todo de opencv 2.4 a 3
+Utilizar este metodo https://www.learnopencv.com/deep-learning-based-object-detection-and-instance-segmentation-using-mask-r-cnn-in-opencv-python-c/
+para segmentar los jugadores

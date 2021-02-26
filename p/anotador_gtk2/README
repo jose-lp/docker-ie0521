@@ -1,0 +1,55 @@
+-=Requirements=-
+
+The cluster development environment with modules for cuda-8 or cuda-7.5, gcc-4.9.2, opencv-2.4.13, yaml-cpp 0.6 and ffmpeg 4.1. If not possible, run
+the install.sh script and modify the macros values detected by opencv for the keyboard on the config.yaml file.
+
+-=General instructions=-
+
+ Arguments: 
+-i <ifile>:     Input video file
+-l:              Load tracking file data.
+-c <cfile>:    Configuration file.
+-t <tfile>:     Tracking file to store or load tracking information with YAML format.
+-r: <size>:		Resize anotations keeping the ratio.
+-o: <ofile>:	Output file if resize option is selected.
+--help:              Show help
+
+Example execution:
+
+./AnotadorRastreo -c ./config.yaml -t ./trackings/jam-crc.yaml -i /tmp/game.avi
+./AnotadorRastreo -c ./config.yaml -t ./trackings/jam-crc.yaml -i /tmp/game.avi -l
+Keyboard Controls: 
+right arrow to forward 1 frame.
+left arrow to backward 1 frame.
+up arrow to forward a step of frames.
+down arrow to backward a step of frames.
++ to increase step size.
+- to decrease step size.
+c to increase step size in 1 second.
+z to decrease step size in 1 second.
+d to delete labels on a frame.
+b to delete last label on a frame.
+a to add a label.
+s to save all trackings to file.
+w to show current frame number. 
+q to quit program
+
+Mouse Controls:
+The actions of the buttons depends if the gtk GUI is enable through the config file
+Left button: Mark a position to tag
+Middle button: Non
+Right button: Non
+Ctrl+Left button: If gtk GUI enable, move backwards 1 frame
+Ctrl+Middle button: If gtk GUI enable, tag last marked position with a popup window
+Ctrl+Right button: If gtk GUI enalbe, move foward 1 frame
+
+-=Tipical use=-
+Select the center of a player with a left mouse click, then press 'a' key (or Ctrl+Middle botton) and add a label for the player at the terminal or GUI window, repeat for each player on each
+frame, at the end save tracking information with 's' key.  In case of an error during the manual anotation, use d to delete the labels for the current frame or b to delete the last anotation. A resize operation is included passing the load and resize options as arguments to the program, the size is the lenght of the video, this program keeps the aspect ratio.
+
+-=Configuration file=-
+At the configuration file is possible to change the key binding (useful if doesnt work the keys, could happen if the opencv library is different) and some general functional
+options such as the number of frames for each step.
+
+-=Other notes=-
+If the load option is selected, the file with the data must be provide with the -t (tracking) option at the command line.

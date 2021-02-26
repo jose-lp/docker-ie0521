@@ -1,0 +1,31 @@
+# ---Tracking file results---
+
+Configuration:  # Video information
+  Video file: /tmp/crc-jmc-8k.avi
+  Frame per seconds: 30
+  Total frames in video: 49944
+  Width: 7680
+  Height: 1183
+# Segmentation parameters
+  Mode: 1
+  Hue Min: 60
+  Hue Max: 180
+  Hue Threshold: 93
+  Kernel Size: 9
+  Sporius: 6
+  Enable line remover: 0
+  Enable green blob remover: 0
+  Line kernel: 10
+  minLineLenght: 50
+  maxLineGap: 10
+  Line contour remover: 0
+  history: 100
+  varThreshold: 16
+  bShadowDetection: 0
+  learningRate: 13
+# Multipartite graph tracker parameters
+  Position Weight: 0.08
+  Histogram Weight: 8
+  Contour Weight: 1
+  Area Weight: 0.0025
+  Window Size: 2

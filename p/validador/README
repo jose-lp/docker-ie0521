@@ -1,0 +1,87 @@
+This is the validation tool for the multipartite graph tracker. Compares the results 
+from the algorithm against the ground truth data from the validadtr tool. 
+The output is the measument from the MOTA metric.
+
+Requirements:
+
+The cluster development environment with modules for cuda-8 or cuda-7.5, gcc-4.9.2, opencv-2.4.13. If not possible, run
+the install.sh script and modify the macros values detected by opencv for the keyboard on the Defs.h file.
+
+The dependencies to build this software are:
+-yaml-cpp-0.6.0
+-opencv-2.4.13.5
+-boost-1.67.0
+
+General instructions:
+
+ Arguments: 
+--help:              Show help
+
+Notation used on detection metrics:
+GT: Ground truth
+SUT: System Under Test
+FP: False positive, an object present in the SUT, but not in the GT (False Alarm)
+FN: False negative, an object present in the GT, but not in the SUT (Detection failure)
+TP: True positive, an object in the GT and the SUT (Correct detection)
+TN: True negative, an element present in neither the GT nor the SUT
+CGT: Complete Ground Truth is the total number of GT objects.
+
+False Positive Rate: Measure how well the system correctly rejects false positives.
+FPR = FP/(FP+TN)
+
+False Alarm Rate: Measure of the likelihood that a detected target is correctly reported
+FAR = FP/(TP+FP)
+
+Detection Rate: Measure of the percentage of true targets tat is detected.
+DR = TP/(TP+FN)
+
+False Negative Rate: Measure of the likelihood that a target will be missed given
+                     the total number of actual tagets.
+FNR = FN/(TP+FN)
+
+True Negative Rate: Measure of the likelihood of a negative response given the total
+                    number of adctual negative detections.
+TNR = TN/(TN+FP)
+
+Accuracy: Measure of the actual performance of the system with regards to both,
+          correctly detecting and correctly rejecting tagets.
+Accuracy = (TP+TN)/CGT
+
+Precision: Fraction of detected items tat are correct, number of true positives relative
+           to the sum of true positives and false positives.
+Precision = TP/(TP+FP)
+
+Recall: Fraction of items tat were correctly detected among all items that
+        should have been detected. True positives relative to the sum of
+        true positives and the false negatives.
+Recall = TP/(TP+FN)
+
+F-Measure: Gives an estimate of the accuracy of the SUT
+F1 = 2 * (Precision * Recall)/(Precision + Recall)
+
+-----------------------------------------------------------------------------------------
+Tracking Metrics
+Tracking based metrics measure the ability of a SUT to track objects over time.
+
+Multiple Object Tracking Precision: The precision of the tracker in determining the
+                                     the exact position of a tracked object.
+
+MOTP = {\sum_{i,t} d_{t}^{i}} /{\sum_t c_t} donde d_{t}^{i} es el error de la distancia
+                                            euclidiana y c_t es la suma total de coincidencias
+                                            
+Multiple Object Tracking Accuracy: The accuracy of the tracker in keeping correct correspondences
+                                   over time, estimating the number of objects, recovering
+                                   tracks, etc.
+                                   
+MOTA = 1 - {{\sum_t m_t + f_p_t + mme_t} / {\sum_t g_t}                                         
+
+Configuration settings:
+   report_level: Amount of details of the report file
+   start_frame: Starting frame to calculate metrics
+   stop_frame: Stop frame to calculate metrics
+   miss_constant: MOTA miss constant
+   false_positive_constant: MOTA false positive constant
+   mismatches_constant: MOTA missmatch constant
+   mismatch_error: Offset number of pixels to consider as a mismatch
+   detection_error: Offset number of pixels to consider as a detection error for FP and FN
+   precision_error: Precision error allowd for MOTP

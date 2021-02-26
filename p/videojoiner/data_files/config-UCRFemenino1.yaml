@@ -1,0 +1,61 @@
+# --- # Configuration file
+
+keys:
+  esc_key: 1048603
+  quit_key: 113
+  safe_key: 115
+  next_key: 1048686
+  left_key: 1113937
+  right_key: 1113939
+  down_key: 1113940
+  up_key: 1113938
+  enter_key: 1048586
+
+joiner:
+  left_video_start_frame: 0
+  right_video_start_frame: 0
+  point_selection_mode: 0
+  left_video_top_left_x: 2023
+  left_video_top_right_x: 3759
+  left_video_bottom_left_x: 189
+  left_video_bottom_right_x: 3782
+  left_video_top_left_y: 939
+  left_video_top_right_y: 995
+  left_video_bottom_left_y: 1162
+  left_video_bottom_right_y: 1481
+  right_video_top_left_x: 289
+  right_video_top_right_x: 2014
+  right_video_bottom_left_x: 253
+  right_video_bottom_right_x: 3768
+  right_video_top_left_y: 1191
+  right_video_top_right_y: 1120
+  right_video_bottom_left_y: 1684
+  right_video_bottom_right_y: 1309
+  video_top_left_x: 131
+  video_top_right_x: 7445
+  video_bottom_left_x: 131
+  video_bottom_right_x: 7445
+  video_top_left_y: 782
+  video_top_right_y: 782
+  video_bottom_left_y: 1675
+  video_bottom_right_y: 1675
+  enable_output_video_crop: 1
+  sync_mode: 0
+  left_timecode: 01:24:07.0
+  right_timecode: 01:24:07.6
+  enable_drop_frame: 1
+  frame_rate: 29.97
+  start_frame: 0
+  stop_frame: 24300
+  frame2skip: 20
+  enable_color_balance: 0
+  enable_s_color_correction: 0
+  enable_v_color_correction: 0
+  color_correction_video_reference: left
+  enable_color_region_selection: 0
+  stitch_mode: 7
+  divide_images: 0
+  try_use_gpu: 1
+  enable_top_corners_correction: 1
+  left_top_corner_correction: 400
+  right_top_corner_correction: -400

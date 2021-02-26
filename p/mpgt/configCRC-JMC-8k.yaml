@@ -1,0 +1,92 @@
+--- # Configuration file
+
+# Segmentation parameters
+segmentator:
+  mode: 1
+  pris:
+    hue_min: 60
+    hue_max: 180 
+    porcentaje_espurias: 10
+    area_max_threshold: 20000
+    tamano_kernel: 9
+    umbral_hue: 93
+    enable_morph_line_remover: 1
+    hmorph_axis: 30
+    vmorph_axis: 2
+    enable_hough_line_remover: 1
+    line_kernel: 10
+    minLineLength: 50
+    maxLineGap: 10
+    shape_contour_remover: 9    
+    lower_boundary: 10
+    upper_boundary: 95
+    enable_boundary_blob_remover: 0
+    enable_morph_operations: 1
+    morph_erode_kernel: 1
+    morph_dilate_kernel: 5
+    enable_manual_field_selection: 1
+    enable_white_remover: 0
+    top_left_point_x: 1837
+    top_left_point_y: 96
+    top_right_point_x: 5810
+    top_right_point_y: 92
+    bottom_left_point_x: 36
+    bottom_left_point_y: 1114
+    bottom_right_point_x: 7567
+    bottom_right_point_y: 1110   
+    
+  mog:
+    history: 100
+    varThreshold: 16
+    bShadowDetection: 0
+    learningRate: 13
+    porcentaje_espurias: 4
+    gaussian_kernel: 3
+    
+# Multipartite graph tracker parameters
+mpgt:
+  start_frame: 800
+  stop_frame: 1100
+  graph_window: 2
+  position_weight: 0.08
+  histogram_weight: 8.0
+  contour_weight: 1.0
+  area_weight: 0.0025
+  speed_weight: 0.05
+  direction_weight: 2500.0
+  depth_weight: 0.08
+  max_speed: 600
+  max_merge_distance: 100
+  min_blob_area_threshold: 30
+  merged_blob_area_threshold: 150
+  init_tkp_threshold: 25
+  enable_oclusion_solver: 4
+  enable_abduction_finder: 1
+  blob_memoir_lenght: 300
+  memoir_diff_threshold: 999999
+  enable_clustering: 0
+  hue_clustering_only: 0
+  how_many_colors: 4
+  kmean_colors_cuantization: 16
+  area_as_cluster_feature: 0
+  clustering_mode: 4
+  n_clusters: 6
+  match_threshold: 50
+  match_method: 2
+
+# Drawer settings
+drawer:
+  enable_boundary_blob_remover: 0
+  lower_boundary: 10
+  upper_boundary: 90
+  draw_ids: 0
+  draw_contours: 1
+  draw_bounding_box: 0
+  draw_blob_ids_also: 0
+  draw_cluster_ids_also: 0
+  draw_trayectories: 0
+  font_scale: 3
+  bounding_box_thickness: 2
+  trayectories_radius: 2
+  enable_color_balance: 1
+  color_balance_percent: 1

@@ -1,0 +1,31 @@
+--- # Configuration file
+
+keys:
+   esc_key: 1048603
+   next_step_key: 1113938
+   previous_step_key: 1113940
+   next_key: 1113939
+   previous_key: 1113937
+#   previous_key: 65361
+#   next_step_key: 65362
+#   next_key: 65363
+#   previous_step_key: 65364
+   increase_step: 1114027
+   decrease_step: 1114029
+   increase1sec_step: 1048675
+   decrease1sec_step: 1048698
+   quit_key: 1048689
+   space_key: 1048608
+   delete_key: 1048676
+   add_key: 1048673
+   safe_key: 1048691
+   shift_del_key: 1114180
+   delete_single_key: 1048674
+   where_key: 1048689
+   
+anotator:
+   default_step_size: 20
+   enable_gtk_window: 1
+   output_version: 1
+   tag_oclusions: 0
+   font_size: 4

@@ -1,0 +1,82 @@
+# ---Parsing file results---
+
+Configuration:
+  Input file: input_file.xmlAnnotation Files/Film Role-0 ID-5 T-0 m00s00-026-m00s01-020.xgtf+Annotation Files/Film Role-0 ID-3 T-0 m00s00-026-m00s01-020.xgtf+Annotation Files/Film Role-0 ID-1 T-0 m00s00-026-m00s01-020.xgtf
+
+Frame: 405
+Blobs:
+  - Player id: 113
+    x: 2107
+    y: 155
+  - Player id: 108
+    x: 2908
+    y: 111
+  - Player id: 21
+    x: 2997
+    y: 91
+  - Player id: 200
+    x: 2086
+    y: 326
+  - Player id: 26
+    x: 2702
+    y: 36
+  - Player id: 5
+    x: 2188
+    y: 91
+  - Player id: 113
+    x: 1868
+    y: 151
+  - Player id: 125
+    x: 1661
+    y: 309
+  - Player id: 128
+    x: 1460
+    y: 160
+  - Player id: 114
+    x: 1958
+    y: 93
+  - Player id: 6
+    x: 3680
+    y: 340
+  - Player id: 107
+    x: 2482
+    y: 44
+  - Player id: 155
+    x: 2589
+    y: 85
+  - Player id: 120
+    x: 3109
+    y: 272
+  - Player id: 11
+    x: 3157
+    y: 256
+  - Player id: 5
+    x: 1832
+    y: 90
+  - Player id: 105
+    x: 623
+    y: 266
+  - Player id: 8
+    x: 3129
+    y: 133
+  - Player id: 9
+    x: 1491
+    y: 152
+  - Player id: 1
+    x: 5160
+    y: 297
+  - Player id: 104
+    x: 2307
+    y: 289
+  - Player id: 114
+    x: 1632
+    y: 95
+  - Player id: 20
+    x: 3521
+    y: 494
+  - Player id: 202
+    x: 1406
+    y: 29
+  - Player id: 14
+    x: 4017
+    y: 217
