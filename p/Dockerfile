@@ -99,7 +99,7 @@ RUN cd /tmp \
 	&& mkdir build && cd build \
 	&& cmake -D CMAKE_BUILD_TYPE=Release \
 	   -D CMAKE_INSTALL_PREFIX=/usr/local \
-	   -D COMPILE_GPU = 1 \
+	   -D COMPILE_GPU=1 \
 	   -D WITH_CUDA=ON \
            -D ENABLE_FAST_MATH=1 \
            -D CUDA_FAST_MATH=1 \
